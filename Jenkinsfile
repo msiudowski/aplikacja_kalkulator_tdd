@@ -21,7 +21,7 @@ pipeline {
                 }   
             }
         }
-        stage('Deploy') {
+        stage('Archive artifacts') {
             steps {
                 echo 'Deploying....'
             }
