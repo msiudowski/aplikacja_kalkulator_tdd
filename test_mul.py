@@ -8,7 +8,7 @@ def test_mul__positive_int_values(calculator):
 
 @pytest.mark.smoke
 def test_mul__negative_int_values(calculator):
-    assert calculator.mul(-2, -3) == 6  
+    assert calculator.mul(-2, -3) == 6
 
 
 @pytest.mark.regression
