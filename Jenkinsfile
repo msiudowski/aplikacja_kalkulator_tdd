@@ -2,14 +2,18 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Static analysis') {
             steps {
-                echo 'Building..'
+                script {
+                    sh 'python3 -m flake8 $WORKSPACE'
+                }
             }
         }
-        stage('Test') {
+        stage('Unit tests') {
             steps {
-                echo 'Testing..'
+                script {
+                    sh 'python3 -m pytest -m $TEST_LEVEL $WORKSPACE'
+                }   
             }
         }
         stage('Deploy') {
