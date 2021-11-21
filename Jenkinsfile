@@ -17,7 +17,7 @@ pipeline {
         stage('Unit tests') {
             steps {
                 script {
-                    sh 'python3 -m pytest -m $TEST_LEVEL $WORKSPACE' --html=report.html
+                    sh 'python3 -m pytest -m $TEST_LEVEL $WORKSPACE --html=report.html'
                 }   
             }
         }
