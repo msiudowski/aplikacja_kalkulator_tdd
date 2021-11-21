@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
+        gitParameter branchFilter: '.*', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
         choice(name: 'TEST_LEVEL', choices: ['smoke', 'regression', 'nightly'], description: '')
     }
     stages {
