@@ -67,11 +67,11 @@ def test_validate_args__tuple_input(calculator):
 
 @pytest.mark.nightly
 def test_validate_args__mixed_invalid_inputs(calculator):
-    invalid_args = [True, 'str', {1, 2}, 
+    invalid_args = [True, 'str', {1, 2},
                     frozenset({1, 3}), {1: 'a'}, [1, 2], (1, 2)]
     for first in range(len(invalid_args)):
         for second in range(first + 1, len(invalid_args)):
             print(f'pair: {invalid_args[first]}:{invalid_args[second]}')
             with pytest.raises(ValueError):
-                assert calculator.validate_args(invalid_args[first], 
+                assert calculator.validate_args(invalid_args[first],
                                                 invalid_args[second])
