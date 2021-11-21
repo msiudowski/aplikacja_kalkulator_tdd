@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: $BRANCH]], extensions: [], userRemoteConfigs: [[url: 'https://github.com/msiudowski/aplikacja_kalkulator_tdd/']]])
+                checkout([$class: 'GitSCM', branches: [[name: '$BRANCH']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/msiudowski/aplikacja_kalkulator_tdd/']]])
             }
         }
         stage('Static analysis') {
