@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Archive artifacts') {
             steps {
-                echo 'Deploying....'
+                archiveArtifacts artifacts: 'report.html /assets', followSymlinks: false
             }
         }
     }
